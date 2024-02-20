@@ -41,7 +41,6 @@ root.render(div)
   )
 ```
 ## 리액트의 속성 사용
-
 ```
 // 두번 째 인자는 해당 태그의 속성 값을 받을 수 있다.
 let h1 = React.createElement('a', {href: 'http://naver.com'}, '네이버')
@@ -58,5 +57,47 @@ var root = ReactDOM.createRoot(el)
 
 root.render(
   React.createElement(HelloWorld, null)
+)
+```
+
+## props의 속성 사용
+```
+class HelloWorld extends React.Component {
+  render() {
+    // HelloWorld 컴포넌트를 사용하는 시점의 속성을 props로 사용 사용
+    return React.createElement('a', {href: this.props.href}, '네이버')
+  }
+}
+
+
+const el =document.getElementById('content')
+var root = ReactDOM.createRoot(el)
+
+root.render(
+  // HelloWorld 컴포넌스 생성시 넘겨울 속성
+  React.createElement(HelloWorld, {href: 'https://naver.com'})
+)
+```
+
+## props 모든 속성 사용
+```
+class HelloWorld extends React.Component {
+  render() {
+    //h1의 속성을 prop 받은 모든 속성.
+    return React.createElement('h1', this.props, 'hello '+ this.props.title + ' world')
+  }
+}
+
+const el =document.getElementById('content')
+var root = ReactDOM.createRoot(el)
+
+root.render(
+  // 하위의 다른 HelloWorld를 감싸기 위한 div 를 구성
+  React.createElement('div', null, 
+    React.createElement(HelloWorld, {title:'React Framework', id: 'react'}),
+    React.createElement(HelloWorld, {title:'Vue Framework', id: 'vue'})
+  )
+)
+
 )
 ```
