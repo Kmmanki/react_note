@@ -27,6 +27,65 @@ var HelloWorld = /*#__PURE__*/function (_React$Component) {
   }]);
   return HelloWorld;
 }(React.Component);
+var DateTimeNow = /*#__PURE__*/function (_React$Component2) {
+  _inherits(DateTimeNow, _React$Component2);
+  function DateTimeNow() {
+    _classCallCheck(this, DateTimeNow);
+    return _callSuper(this, DateTimeNow, arguments);
+  }
+  _createClass(DateTimeNow, [{
+    key: "render",
+    value: function render() {
+      var dateTimeNow = new Date().toLocaleTimeString();
+      return /*#__PURE__*/React.createElement("span", null, "Current Time is : ", dateTimeNow, "... ");
+    }
+  }]);
+  return DateTimeNow;
+}(React.Component);
+var Profile = /*#__PURE__*/function (_React$Component3) {
+  _inherits(Profile, _React$Component3);
+  function Profile() {
+    _classCallCheck(this, Profile);
+    return _callSuper(this, Profile, arguments);
+  }
+  _createClass(Profile, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/React.createElement("a", {
+        className: "block",
+        href: this.props.url
+      }, this.props.userName);
+    }
+  }]);
+  return Profile;
+}(React.Component);
+var Profile2 = /*#__PURE__*/function (_React$Component4) {
+  _inherits(Profile2, _React$Component4);
+  function Profile2() {
+    _classCallCheck(this, Profile2);
+    return _callSuper(this, Profile2, arguments);
+  }
+  _createClass(Profile2, [{
+    key: "getUrl",
+    value: function getUrl() {
+      return 'http://www.naver.com';
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/React.createElement("a", {
+        className: "block",
+        href: this.getUrl()
+      }, this.props.userName);
+    }
+  }]);
+  return Profile2;
+}(React.Component);
 var el = document.getElementById('content');
 var root = ReactDOM.createRoot(el);
-root.render(React.createElement(HelloWorld, null));
+root.render( /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(HelloWorld, null), /*#__PURE__*/React.createElement(DateTimeNow, null), /*#__PURE__*/React.createElement(Profile, {
+  url: "http://www.naver.com",
+  userName: "\uAE40\uB9CC\uAE30"
+}), /*#__PURE__*/React.createElement(Profile2, {
+  userName: "\uAE40\uB9CC\uAE30"
+})));

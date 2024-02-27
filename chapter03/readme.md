@@ -36,9 +36,56 @@ root.render(
 ## JSX의 컴파일
 .\node_modules\.bin\babel .\jsx -o .\js\script-compield.js
 jsx 디렉토리의 모든 파일을 js디렉토리의 script-compield.js로 변환
+.\node_modules\.bin\babel .\jsx -o .\js\script-compield.js -w
+-w 옵션은 해당 파일의 변경을 감지하여 자동 빌드
 
 ## index.html 소스 수정
 
 ```
 <script src="./js//script-compield.js" type="text/javascript">
+```
+
+
+## JSX의 변수의 출력
+
+```
+class DateTimeNow extends React.Component {
+  render () {
+    let dateTimeNow = new Date().toLocaleTimeString()
+    return <span>Current Time is : {dateTimeNow}... </span>
+  }
+}
+```
+
+## JSX의 속성 사용
+```
+class Profile extends React.Component {
+  render () {
+    return <a href={this.props.url}>{this.props.userName}</a>
+  }
+}
+
+
+const el =document.getElementById('content')
+var root = ReactDOM.createRoot(el)
+
+root.render(
+  <div>
+    <HelloWorld></HelloWorld>
+    <DateTimeNow></DateTimeNow>
+    <Profile url="http://www.naver.com" userName="김만기"></Profile>
+  </div>
+)
+```
+
+## JSX의 apthem 메소드 사용
+```
+class Profile2 extends React.Component {
+  getUrl() {
+    return 'http://www.naver.com'
+  }
+  render () {
+    return <a className="block" href={this.getUrl()}>{this.props.userName}</a>
+  }
+}
 ```
