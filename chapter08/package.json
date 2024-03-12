@@ -1,0 +1,23 @@
+{
+  "name": "chapter03",
+  "version": "1.0.0",
+  "description": "챕터2 까지의 Element 생성은 React의 createElement 함수에 각각의 인자를 넣는 방식으로 개발을 하였다.\r 해당 Element가 적고 복잡하지 않다면 크게 문제가 없지만 복잡해질 수록 가독성이 떨어진다는 단점이 있다.\r 이를 보안하기 위한 것이 JSX이다.\r JSX는 기존의 HTML태그를 사용하는것과 매우 유사하다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.23.9",
+    "@babel/core": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
+    "@babel/preset-react": "^7.23.3"
+  }
+}
