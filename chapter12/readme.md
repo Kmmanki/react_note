@@ -32,12 +32,16 @@ npm i -D babel-loader css-loader react-hot-loader webpack webpack-dev-server htm
 npm install -D @webpack-cli/generators
 npx webpack init --force
 
-babel.config.js
+- js의 로드는 dom 이후에 
 ```
-module.exports = {
-    presets:[
-        "@babel/preset-env",
-        "@babel/preset-react"
-    ]
-}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="./main.js" crossorigin></script>
+</html>
 ```
