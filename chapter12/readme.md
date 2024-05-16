@@ -32,6 +32,18 @@ npm i -D babel-loader css-loader react-hot-loader webpack webpack-dev-server htm
 npm install -D @webpack-cli/generators
 npx webpack init --force
 
+barbelrc
+```
+{
+  "plugins": [],
+  "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+  ]
+}
+
+```
+
 - js의 로드는 dom 이후에 
 ```
 <html lang="en">
@@ -45,3 +57,5 @@ npx webpack init --force
   <script src="./main.js" crossorigin></script>
 </html>
 ```
+
+npm run serve
